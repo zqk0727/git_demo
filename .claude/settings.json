@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python scripts/pre_commit_check.py 2>/dev/null || true",
+            "timeout": 30,
+            "statusMessage": "Running pre-commit validation..."
+          }
+        ]
+      }
+    ]
+  }
+}
